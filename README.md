@@ -22,7 +22,7 @@ The following **extensions** are implemented:
 
 Here's a walk-through of implemented user stories:
 
-<img src='https://j.gifs.com/QkGoKZ.gif' title='Video Walk-through' width='' alt='Video Walk-through' /><br><br>
+<img src='https://j.gifs.com/QkGoKZ.gif' title='Video Walk-through' width='250' alt='Video Walk-through' /><br><br>
 
 **Author:** [Gerald Oliva](https://www.geraldoliva.com/)
 
