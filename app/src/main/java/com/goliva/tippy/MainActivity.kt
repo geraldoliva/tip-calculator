@@ -1,24 +1,22 @@
 package com.goliva.tippy
 
 import android.animation.ArgbEvaluator
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import android.widget.EditText
 import android.widget.SeekBar
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.goliva.tippy.databinding.ActivityMainBinding
 
-private const val TAG = "MainActivity"
 private const val INITIAL_TIP_PERCENT = 15
 private const val INITIAL_PERSON_COUNT = 1
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -33,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                Log.i(TAG, "onProgressChanged $p1")
                 binding.tvTipPercentLabel.text = "$p1%"
                 computeTipAndTotal()
                 updateTipDescription(p1)
@@ -55,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                     binding.etBaseAmount.setText("0.")
                     binding.etBaseAmount.setSelection(2)
                 }
-                Log.i(TAG, "afterTextChanged $p0")
                 computeTipAndTotal()
                 computePerPersonTotal()
             }
@@ -63,7 +59,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.seekBarPersonCount.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                Log.i(TAG, "onPersonCountChanged $p1")
                 binding.tvSplitByLabel.text = "Split by $p1"
                 computePerPersonTotal()
             }
@@ -75,6 +70,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun computePerPersonTotal() {
         if (binding.etBaseAmount.text.isEmpty()) {
             binding.tvPerPersonTotalAmount.text = ""
@@ -104,6 +100,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvTipDescription.setTextColor(color)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun computeTipAndTotal() {
         if (binding.etBaseAmount.text.isEmpty()) {
             binding.tvTipAmount.text = ""
