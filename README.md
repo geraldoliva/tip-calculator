@@ -8,15 +8,15 @@ Time spent: 4 hours spent in total
 
 The following **required** functionality is completed:
 
-* [x] User can enter in a bill amount (total amount to tip on).
-* [x] User can enter a tip percentage (what % the user wants to tip).
-* [x] The tip and total amount are updated immediately when any of the inputs changes.
-* [x] The user sees a label or color update based on the tip amount.
+* :white_check_mark: User can enter in a bill amount (total amount to tip on).
+* :white_check_mark: User can enter a tip percentage (what % the user wants to tip).
+* :white_check_mark: The tip and total amount are updated immediately when any of the inputs changes.
+* :white_check_mark: The user sees a label or color update based on the tip amount.
 
 The following **extensions** are implemented:
 
-* [x] Custom colors palette selected.
-* [x] Splits amount based on people in group.
+* :white_check_mark: Custom colors palette selected.
+* :white_check_mark: Splits amount based on people in group.
 
 ## Video Walk-through
 
